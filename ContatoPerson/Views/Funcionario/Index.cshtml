@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ContatoPerson.Models.Funcionario>
+
+
+@{
+    ViewData["Title"] = "Listagem de Funcionarios";
+}
+
+<h2>
+    Funcionarios
+</h2>
+<p>
+    <a asp-action="FuncionarioView">Incluir um Funcionario</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CPF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sexo)
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.DataNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.CPF)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Sexo)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
